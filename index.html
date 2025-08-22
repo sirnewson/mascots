@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funcity Mascots | Mascot & Party Rentals</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <style>
+        /* Custom styles for the page */
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff; 
+            color: #1F2937; /* text-gray-800 */
+        }
+        /* Hero section overlay */
+        .hero-overlay::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(29, 78, 216, 0.7); /* blue-700 with opacity */
+        }
+        /* Animation for modal */
+        .modal-enter-active {
+            transition: all 300ms ease-out;
+        }
+        .modal-leave-active {
+            transition: all 200ms ease-in;
+        }
+        .modal-enter, .modal-leave-to {
+            opacity: 0;
+            transform: scale(0.95);
+        }
+        /* Scroll-triggered animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Sticky Navigation Bar -->
+    <nav class="bg-white/80 backdrop-blur-md shadow-md sticky top-0 z-40">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-3">
+                <a href="#" class="flex items-center space-x-2">
+                    <img src="https://i.ibb.co/vxFGGYQK/82f42ed9-8028-42e5-a441-f73996cb6a41.jpg" alt="Company Logo" class="h-12 w-12 rounded-full border-2 border-blue-500">
+                    <span class="font-bold text-xl text-gray-800 hidden sm:block">Funcity Mascots</span>
+                </a>
+                <div class="flex items-center space-x-4">
+                     <a href="#rentals" class="text-gray-600 hover:text-blue-600 font-medium hidden md:block">Party Rentals</a>
+                     <a href="#gallery" class="text-gray-600 hover:text-blue-600 font-medium hidden md:block">Mascots</a>
+                     <a href="tel:0722238988" class="bg-red-500 text-white font-bold py-2 px-5 rounded-full text-lg hover:bg-red-600 transition-colors shadow-lg hover:shadow-xl transform hover:scale-105">
+                        <i class="fas fa-phone mr-2"></i> Book Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative text-white text-center flex items-center justify-center h-[60vh] min-h-[400px] bg-cover bg-center" style="background-image: url('https://i.ibb.co/xSXkSY6X/cover.png');">
+        <div class="hero-overlay"></div>
+        <div class="relative z-10 p-4">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight leading-tight mb-4 text-shadow-lg">
+                The Ultimate Party Experience!
+            </h1>
+            <p class="mt-4 text-lg md:text-xl text-gray-200 max-w-2xl mx-auto">
+                Unforgettable fun with our amazing mascots, bouncing castles, and event rentals.
+            </p>
+            <a href="#rentals" class="mt-8 inline-block bg-red-500 text-white font-bold py-4 px-10 rounded-full text-xl hover:bg-red-600 transition-colors shadow-xl hover:shadow-2xl transform hover:scale-105">
+                Explore Rentals
+            </a>
+        </div>
+    </header>
+
+    <!-- Party Rentals Section -->
+    <section id="rentals" class="py-16 sm:py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 reveal">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">Complete Your Party Package!</h2>
+                <p class="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">Add these amazing extras to create the ultimate fun day experience.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Rental Item Cards -->
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center transform transition-all duration-300 hover:-translate-y-2 reveal flex flex-col justify-between">
+                    <div>
+                        <div class="text-blue-500 text-5xl mb-4"><i class="fas fa-chess-rook"></i></div>
+                        <h3 class="text-xl font-bold text-gray-800">Bouncing Castle</h3>
+                        <p class="text-gray-500 mt-1">Small: <span class="font-bold text-gray-700">6,000 KSh</span></p>
+                        <p class="text-gray-500">Medium: <span class="font-bold text-gray-700">10,000 KSh</span></p>
+                    </div>
+                    <a href="#" class="book-btn mt-4 bg-blue-500 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-600 transition-colors" data-item="Bouncing Castle (Small or Medium)">Book Now</a>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center transform transition-all duration-300 hover:-translate-y-2 reveal flex flex-col justify-between" style="transition-delay: 100ms;">
+                    <div>
+                        <div class="text-red-500 text-5xl mb-4"><i class="fas fa-water"></i></div>
+                        <h3 class="text-xl font-bold text-gray-800">Mega Slide</h3>
+                        <p class="text-2xl font-bold text-red-600 mt-2">20,000 KSh</p>
+                    </div>
+                    <a href="#" class="book-btn mt-4 bg-red-500 text-white font-bold py-2 px-4 rounded-full hover:bg-red-600 transition-colors" data-item="Mega Slide">Book Now</a>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center transform transition-all duration-300 hover:-translate-y-2 reveal flex flex-col justify-between" style="transition-delay: 200ms;">
+                    <div>
+                        <div class="text-blue-500 text-5xl mb-4"><i class="fas fa-futbol"></i></div>
+                        <h3 class="text-xl font-bold text-gray-800">Football Inflatable</h3>
+                        <p class="text-2xl font-bold text-blue-600 mt-2">10,000 KSh</p>
+                    </div>
+                    <a href="#" class="book-btn mt-4 bg-blue-500 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-600 transition-colors" data-item="Football Inflatable">Book Now</a>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center transform transition-all duration-300 hover:-translate-y-2 reveal flex flex-col justify-between" style="transition-delay: 300ms;">
+                    <div>
+                        <div class="text-red-500 text-5xl mb-4"><i class="fas fa-paint-brush"></i></div>
+                        <h3 class="text-xl font-bold text-gray-800">Face Painting</h3>
+                        <p class="text-2xl font-bold text-red-600 mt-2">3,000 KSh</p>
+                    </div>
+                    <a href="#" class="book-btn mt-4 bg-red-500 text-white font-bold py-2 px-4 rounded-full hover:bg-red-600 transition-colors" data-item="Face Painting">Book Now</a>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center transform transition-all duration-300 hover:-translate-y-2 reveal flex flex-col justify-between">
+                    <div>
+                        <div class="text-blue-500 text-5xl mb-4"><i class="fas fa-hat-clown"></i></div>
+                        <h3 class="text-xl font-bold text-gray-800">Clown with Games</h3>
+                        <p class="text-2xl font-bold text-blue-600 mt-2">4,500 KSh</p>
+                    </div>
+                    <a href="#" class="book-btn mt-4 bg-blue-500 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-600 transition-colors" data-item="Clown with Games">Book Now</a>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center transform transition-all duration-300 hover:-translate-y-2 reveal flex flex-col justify-between" style="transition-delay: 100ms;">
+                    <div>
+                        <div class="text-red-500 text-5xl mb-4"><i class="fas fa-arrows-up-down"></i></div>
+                        <h3 class="text-xl font-bold text-gray-800">Trampoline</h3>
+                        <p class="text-2xl font-bold text-red-600 mt-2">6,000 KSh</p>
+                    </div>
+                    <a href="#" class="book-btn mt-4 bg-red-500 text-white font-bold py-2 px-4 rounded-full hover:bg-red-600 transition-colors" data-item="Trampoline">Book Now</a>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center transform transition-all duration-300 hover:-translate-y-2 reveal flex flex-col justify-between" style="transition-delay: 200ms;">
+                    <div>
+                        <div class="text-blue-500 text-5xl mb-4"><i class="fas fa-archway"></i></div>
+                        <h3 class="text-xl font-bold text-gray-800">Inflatable Arch</h3>
+                        <p class="text-2xl font-bold text-blue-600 mt-2">5,000 KSh</p>
+                    </div>
+                    <a href="#" class="book-btn mt-4 bg-blue-500 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-600 transition-colors" data-item="Inflatable Arch">Book Now</a>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center transform transition-all duration-300 hover:-translate-y-2 reveal flex flex-col justify-between" style="transition-delay: 300ms;">
+                    <div>
+                        <div class="text-red-500 text-5xl mb-4"><i class="fas fa-truck"></i></div>
+                        <h3 class="text-xl font-bold text-gray-800">Transport</h3>
+                        <p class="text-2xl font-bold text-red-600 mt-2">10,000 KSh</p>
+                    </div>
+                    <a href="#" class="book-btn mt-4 bg-red-500 text-white font-bold py-2 px-4 rounded-full hover:bg-red-600 transition-colors" data-item="Transport">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mascot Gallery & Pricing Section -->
+    <main id="gallery" class="container mx-auto px-4 py-16 sm:py-20">
+        <div class="text-center mb-12 reveal">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">Meet Our Amazing Mascots!</h2>
+            <p class="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">The life of the party! Click any mascot to see more or download.</p>
+        </div>
+        
+        <!-- Pricing -->
+        <div class="bg-white p-6 rounded-2xl shadow-xl max-w-3xl mx-auto mb-12 reveal">
+            <h3 class="text-2xl font-bold text-center text-blue-600 mb-4">Mascot Hire Packages</h3>
+            <div class="grid sm:grid-cols-3 gap-4 text-center">
+                <div class="bg-blue-50 p-4 rounded-lg border border-blue-100">
+                    <p class="text-lg font-semibold text-blue-800">1 Hour</p>
+                    <p class="text-2xl font-bold text-red-600">2,000 KSh</p>
+                </div>
+                <div class="bg-blue-50 p-4 rounded-lg border border-blue-100">
+                    <p class="text-lg font-semibold text-blue-800">Half Day (6 hrs)</p>
+                    <p class="text-2xl font-bold text-red-600">5,000 KSh</p>
+                </div>
+                <div class="bg-blue-50 p-4 rounded-lg border border-blue-100">
+                    <p class="text-lg font-semibold text-blue-800">Full Day</p>
+                    <p class="text-2xl font-bold text-red-600">8,500 KSh</p>
+                </div>
+            </div>
+             <a href="#" class="book-btn block w-full text-center mt-4 bg-blue-500 text-white font-bold py-3 px-4 rounded-full hover:bg-blue-600 transition-colors" data-item="Mascot Hire">Book a Mascot</a>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div id="gallery-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 reveal">
+            <!-- Images will be dynamically inserted here -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800">
+        <div class="container mx-auto py-12 px-4 text-center text-white">
+            <h3 class="text-3xl font-bold">Ready to Book Your Fun Day?</h3>
+            <p class="text-gray-300 mt-2 text-lg">Call us now to make your event unforgettable!</p>
+            <a href="tel:0722238988" class="mt-6 inline-block bg-red-500 text-white font-bold py-4 px-10 rounded-full text-xl hover:bg-red-600 transition-colors shadow-lg hover:shadow-xl transform hover:scale-105">
+                <i class="fas fa-phone mr-2"></i> 0722 238 988
+            </a>
+        </div>
+    </footer>
+
+    <!-- Modal (Lightbox) -->
+    <div id="modal" class="fixed inset-0 bg-black/80 flex justify-center items-center p-4 z-50 opacity-0 pointer-events-none transition-opacity duration-300">
+        <div id="modal-content" class="relative bg-white p-4 rounded-lg shadow-2xl max-w-4xl max-h-full w-full h-full flex flex-col items-center justify-center modal-enter">
+            <img id="modal-img" src="" alt="Full-size mascot image" class="max-w-full max-h-[80%] object-contain rounded-md">
+            <div class="mt-4 flex flex-col sm:flex-row gap-3">
+                <a id="download-btn" href="#" download="mascot.jpg" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 transition-colors">
+                    <i class="fas fa-download mr-2"></i>Download
+                </a>
+                <button id="close-btn" class="inline-flex items-center justify-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 transition-colors">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Image URLs ---
+            const imageUrls = [
+                'https://i.ibb.co/Gf4GLTZH/DSC-8256.jpg', 'https://i.ibb.co/bRRH9wyy/DSC-8266.jpg', 'https://i.ibb.co/YFWWfDc8/DSC-8273.jpg',
+                'https://i.ibb.co/84dj6MxR/DSC-8275.jpg', 'https://i.ibb.co/sdvynyyS/DSC-8276.jpg', 'https://i.ibb.co/N2mZ4tj2/DSC-8311.jpg',
+                'https://i.ibb.co/HLrggsrK/DSC-8361.jpg', 'https://i.ibb.co/Fb2ks6NV/DSC-8371.jpg', 'https://i.ibb.co/vvrL7ZQp/DSC-8377.jpg',
+                'https://i.ibb.co/mVHKNK2Z/DSC-8380.jpg', 'https://i.ibb.co/rRRhQ21F/DSC-8450.jpg', 'https://i.ibb.co/6RVwLbSS/DSC-8463.jpg',
+                'https://i.ibb.co/jPK8pw9q/IMG-8295.jpg', 'https://i.ibb.co/NdxcbfNk/IMG-8319.jpg', 'https://i.ibb.co/QvcgRqf5/IMG-8333.jpg',
+                'https://i.ibb.co/wFsg7LxH/IMG-8386.jpg', 'https://i.ibb.co/FbjQL5R3/IMG-8407.jpg', 'https://i.ibb.co/knTGqwB/IMG-8417.jpg',
+                'https://i.ibb.co/4gR5XWLT/IMG-8421.jpg', 'https://i.ibb.co/WvzVDc9h/IMG-8424.jpg', 'https://i.ibb.co/8LhDNNvD/IMG-8450.jpg',
+                'https://i.ibb.co/cXLtNr2z/IMG-8459.jpg', 'https://i.ibb.co/RkmvmfXb/IMG-8466.jpg', 'https://i.ibb.co/PvX49p9z/IMG-8468.jpg',
+                'https.i.ibb.co/vCf1xfG8/IMG-8518.jpg', 'https://i.ibb.co/MxBkn4dv/IMG-8558.jpg'
+            ];
+
+            // --- Element Selectors ---
+            const galleryGrid = document.getElementById('gallery-grid');
+            const modal = document.getElementById('modal');
+            const modalContent = document.getElementById('modal-content');
+            const modalImg = document.getElementById('modal-img');
+            const downloadBtn = document.getElementById('download-btn');
+            const closeBtn = document.getElementById('close-btn');
+
+            // --- Populate Gallery ---
+            function populateGallery() {
+                imageUrls.forEach((url, index) => {
+                    const card = document.createElement('div');
+                    card.className = 'group relative overflow-hidden rounded-lg shadow-md cursor-pointer aspect-w-1 aspect-h-1';
+                    const img = document.createElement('img');
+                    img.src = url;
+                    img.alt = `Mascot ${index + 1}`;
+                    img.className = 'w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 ease-in-out';
+                    img.onerror = () => { img.src = `https://placehold.co/400x400/e2e8f0/475569?text=Mascot`; };
+                    const overlay = document.createElement('div');
+                    overlay.className = 'absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-opacity duration-300';
+                    card.addEventListener('click', () => openModal(url, `mascot-${index + 1}.jpg`));
+                    card.appendChild(img);
+                    card.appendChild(overlay);
+                    galleryGrid.appendChild(card);
+                });
+            }
+
+            // --- Modal Logic ---
+            function openModal(url, filename) {
+                modalImg.src = url;
+                downloadBtn.href = url;
+                downloadBtn.download = filename;
+                modal.classList.remove('opacity-0', 'pointer-events-none');
+                modalContent.classList.add('modal-enter-active');
+            }
+
+            function closeModal() {
+                modalContent.classList.remove('modal-enter-active');
+                modalContent.classList.add('modal-leave-to');
+                setTimeout(() => {
+                    modal.classList.add('opacity-0', 'pointer-events-none');
+                    modalContent.classList.remove('modal-leave-to');
+                }, 200);
+            }
+
+            closeBtn.addEventListener('click', closeModal);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) closeModal();
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !modal.classList.contains('pointer-events-none')) closeModal();
+            });
+            
+            // --- Scroll Animation Logic ---
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.reveal').forEach(el => {
+                observer.observe(el);
+            });
+
+            // --- WhatsApp Button Logic ---
+            function setupWhatsAppLinks() {
+                const phoneNumber = "254722238988"; // Use international format without '+'
+                const buttons = document.querySelectorAll('.book-btn');
+                buttons.forEach(button => {
+                    const itemName = button.dataset.item;
+                    const message = encodeURIComponent(`Hello, I'd like to book the ${itemName}.`);
+                    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+                    button.setAttribute('href', whatsappUrl);
+                    button.setAttribute('target', '_blank'); // Open in new tab
+                });
+            }
+
+            // --- Initialize ---
+            populateGallery();
+            setupWhatsAppLinks();
+        });
+    </script>
+
+</body>
+</html>
