@@ -53,6 +53,33 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Fun particle animations */
+        .particle {
+            position: absolute;
+            font-size: 2rem;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Rainbow border effect */
+        .border-rainbow {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7, #fd79a8);
+            background-size: 300% 300%;
+            animation: rainbow 3s ease infinite;
+        }
+
+        @keyframes rainbow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -91,6 +118,106 @@
             </a>
         </div>
     </header>
+
+    <!-- Fun Mascot Pricing Section - TOP -->
+    <section class="py-16 sm:py-20 bg-gradient-to-br from-pink-100 via-blue-50 to-yellow-100 relative overflow-hidden">
+        <!-- Floating Particles Background -->
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="particle animate-bounce" style="left: 10%; top: 20%; animation-delay: 0s;">🎈</div>
+            <div class="particle animate-bounce" style="left: 80%; top: 15%; animation-delay: 0.5s;">⭐</div>
+            <div class="particle animate-bounce" style="left: 20%; top: 70%; animation-delay: 1s;">🎪</div>
+            <div class="particle animate-bounce" style="left: 90%; top: 60%; animation-delay: 1.5s;">🎭</div>
+            <div class="particle animate-bounce" style="left: 5%; top: 50%; animation-delay: 2s;">🎨</div>
+            <div class="particle animate-bounce" style="left: 70%; top: 80%; animation-delay: 2.5s;">🎁</div>
+            <div class="particle animate-bounce" style="left: 40%; top: 10%; animation-delay: 3s;">🎉</div>
+            <div class="particle animate-bounce" style="left: 60%; top: 90%; animation-delay: 3.5s;">🎵</div>
+            <div class="particle animate-bounce" style="left: 30%; top: 30%; animation-delay: 4s;">🎺</div>
+            <div class="particle animate-bounce" style="left: 85%; top: 35%; animation-delay: 4.5s;">🎪</div>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-12 reveal">
+                <h2 class="text-4xl md:text-5xl font-black text-transparent bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text mb-4">🎭 Amazing Mascot Fun! 🎭</h2>
+                <p class="text-xl text-gray-700 font-semibold">Professional Entertainment for Your Special Events</p>
+            </div>
+
+            <!-- Fun Mascot Pricing -->
+            <div class="bg-white/90 backdrop-blur-sm p-8 rounded-3xl shadow-2xl max-w-4xl mx-auto mb-12 reveal relative overflow-hidden border-4 border-rainbow">
+                <!-- Animated Background Elements -->
+                <div class="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-yellow-300/20 to-pink-300/20 rounded-full -translate-x-16 -translate-y-16 animate-pulse"></div>
+                <div class="absolute bottom-0 right-0 w-24 h-24 bg-gradient-to-br from-blue-300/20 to-purple-300/20 rounded-full translate-x-12 translate-y-12 animate-pulse" style="animation-delay: 1s;"></div>
+
+                <div class="relative z-10">
+                    <!-- Main Pricing Grid -->
+                    <div class="grid sm:grid-cols-3 gap-6 mb-8">
+                        <div class="bg-gradient-to-br from-yellow-200 to-yellow-300 p-6 rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300 border-2 border-yellow-400">
+                            <div class="text-center">
+                                <div class="text-5xl mb-3 animate-pulse">⏰</div>
+                                <p class="text-lg font-bold text-gray-800">Per Hour</p>
+                                <p class="text-3xl font-black text-red-600 mb-2">2,000 KSh</p>
+                                <p class="text-sm text-gray-600">Perfect for short events</p>
+                            </div>
+                        </div>
+                        <div class="bg-gradient-to-br from-orange-200 to-orange-300 p-6 rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300 border-2 border-orange-400 relative">
+                            <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                                <span class="bg-gradient-to-r from-orange-500 to-red-500 text-white px-3 py-1 rounded-full text-sm font-bold animate-pulse">🔥 POPULAR 🔥</span>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-5xl mb-3 animate-pulse">🌅</div>
+                                <p class="text-lg font-bold text-gray-800">Half Day</p>
+                                <p class="text-3xl font-black text-red-600 mb-2">4,000 KSh</p>
+                                <p class="text-sm text-gray-600">4-6 hours of fun</p>
+                            </div>
+                        </div>
+                        <div class="bg-gradient-to-br from-green-200 to-green-300 p-6 rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300 border-2 border-green-400">
+                            <div class="text-center">
+                                <div class="text-5xl mb-3 animate-pulse">🌟</div>
+                                <p class="text-lg font-bold text-gray-800">Full Day</p>
+                                <p class="text-3xl font-black text-red-600 mb-2">6,000 KSh</p>
+                                <p class="text-sm text-gray-600">All-day entertainment</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Special Birthday Package -->
+                    <div class="bg-gradient-to-r from-pink-400 via-purple-400 to-red-400 p-6 rounded-2xl shadow-xl border-4 border-yellow-300 relative mb-6 animate-pulse">
+                        <div class="absolute -top-2 -right-2 bg-yellow-400 text-red-800 px-3 py-2 rounded-full text-sm font-black transform rotate-12 animate-bounce">
+                            🎂 NEW! 🎉
+                        </div>
+                        <div class="text-center text-white">
+                            <h4 class="text-2xl md:text-3xl font-black mb-3">🎈 SURPRISE BIRTHDAY PACKAGES 🎈</h4>
+                            <p class="text-xl font-bold mb-4">Starting from 2,000 KSh</p>
+                            <div class="grid sm:grid-cols-2 gap-4 text-left">
+                                <div class="bg-white/30 p-3 rounded-lg backdrop-blur-sm border border-white/20">
+                                    <p class="font-semibold">✨ With Our Cake & Gifts</p>
+                                    <p class="text-sm">Complete surprise package</p>
+                                </div>
+                                <div class="bg-white/30 p-3 rounded-lg backdrop-blur-sm border border-white/20">
+                                    <p class="font-semibold">🎁 With Your Cake & Gifts</p>
+                                    <p class="text-sm">Bring your own treats</p>
+                                </div>
+                            </div>
+                            <p class="text-sm mt-3 font-medium">*Transport not included • T&C apply</p>
+                        </div>
+                    </div>
+
+                    <!-- Call to Action Buttons -->
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <a href="#" class="book-btn block text-center bg-gradient-to-r from-yellow-400 to-orange-400 text-gray-900 font-black py-4 px-6 rounded-full text-lg hover:from-yellow-300 hover:to-orange-300 transition-all duration-300 transform hover:scale-105 shadow-lg" data-item="Professional Mascot Entertainment">
+                            <i class="fas fa-star mr-2"></i>Book Standard Package
+                        </a>
+                        <a href="#" class="book-btn block text-center bg-gradient-to-r from-pink-500 to-purple-500 text-white font-black py-4 px-6 rounded-full text-lg hover:from-pink-400 hover:to-purple-400 transition-all duration-300 transform hover:scale-105 shadow-lg" data-item="Surprise Birthday Package">
+                            <i class="fas fa-birthday-cake mr-2"></i>Book Birthday Surprise
+                        </a>
+                    </div>
+
+                    <div class="text-center mt-6">
+                        <p class="text-gray-700 font-semibold text-lg">📞 Call now for instant booking!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Party Rentals Section -->
     <section id="rentals" class="py-16 sm:py-20 bg-gray-50">
@@ -177,86 +304,6 @@
             <p class="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">The life of the party! Click any mascot to see more or download.</p>
         </div>
         
-        <!-- Industry Standard Mascot Pricing -->
-        <div class="bg-gradient-to-br from-blue-600 to-purple-700 p-8 rounded-3xl shadow-2xl max-w-4xl mx-auto mb-12 reveal relative overflow-hidden">
-            <!-- Animated Background Elements -->
-            <div class="absolute top-0 left-0 w-32 h-32 bg-white/10 rounded-full -translate-x-16 -translate-y-16 animate-pulse"></div>
-            <div class="absolute bottom-0 right-0 w-24 h-24 bg-white/10 rounded-full translate-x-12 translate-y-12 animate-pulse" style="animation-delay: 1s;"></div>
-
-            <div class="relative z-10">
-                <div class="text-center mb-8">
-                    <h3 class="text-3xl md:text-4xl font-black text-white mb-3">🎭 INDUSTRY STANDARD RATES 🎭</h3>
-                    <p class="text-xl text-blue-100 font-semibold">Professional Mascot Entertainment</p>
-                </div>
-
-                <!-- Main Pricing Grid -->
-                <div class="grid sm:grid-cols-3 gap-6 mb-8">
-                    <div class="bg-white/95 backdrop-blur-sm p-6 rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300 border-2 border-yellow-400">
-                        <div class="text-center">
-                            <div class="text-4xl mb-3">⏰</div>
-                            <p class="text-lg font-bold text-gray-800">Per Hour</p>
-                            <p class="text-3xl font-black text-red-600 mb-2">2,000 KSh</p>
-                            <p class="text-sm text-gray-600">Perfect for short events</p>
-                        </div>
-                    </div>
-                    <div class="bg-white/95 backdrop-blur-sm p-6 rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300 border-2 border-orange-400 relative">
-                        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                            <span class="bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-bold">POPULAR</span>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-4xl mb-3">🌅</div>
-                            <p class="text-lg font-bold text-gray-800">Half Day</p>
-                            <p class="text-3xl font-black text-red-600 mb-2">4,000 KSh</p>
-                            <p class="text-sm text-gray-600">4-6 hours of fun</p>
-                        </div>
-                    </div>
-                    <div class="bg-white/95 backdrop-blur-sm p-6 rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300 border-2 border-green-400">
-                        <div class="text-center">
-                            <div class="text-4xl mb-3">🌟</div>
-                            <p class="text-lg font-bold text-gray-800">Full Day</p>
-                            <p class="text-3xl font-black text-red-600 mb-2">6,000 KSh</p>
-                            <p class="text-sm text-gray-600">All-day entertainment</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Special Birthday Package -->
-                <div class="bg-gradient-to-r from-pink-500 to-red-500 p-6 rounded-2xl shadow-xl border-4 border-yellow-300 relative mb-6 animate-pulse">
-                    <div class="absolute -top-2 -right-2 bg-yellow-400 text-red-800 px-3 py-2 rounded-full text-sm font-black transform rotate-12">
-                        🎂 NEW! 🎉
-                    </div>
-                    <div class="text-center text-white">
-                        <h4 class="text-2xl md:text-3xl font-black mb-3">🎈 SURPRISE BIRTHDAY PACKAGES 🎈</h4>
-                        <p class="text-xl font-bold mb-4">Starting from 2,000 KSh</p>
-                        <div class="grid sm:grid-cols-2 gap-4 text-left">
-                            <div class="bg-white/20 p-3 rounded-lg backdrop-blur-sm">
-                                <p class="font-semibold">✨ With Our Cake & Gifts</p>
-                                <p class="text-sm">Complete surprise package</p>
-                            </div>
-                            <div class="bg-white/20 p-3 rounded-lg backdrop-blur-sm">
-                                <p class="font-semibold">🎁 With Your Cake & Gifts</p>
-                                <p class="text-sm">Bring your own treats</p>
-                            </div>
-                        </div>
-                        <p class="text-sm mt-3 font-medium">*Transport not included • T&C apply</p>
-                    </div>
-                </div>
-
-                <!-- Call to Action Buttons -->
-                <div class="grid sm:grid-cols-2 gap-4">
-                    <a href="#" class="book-btn block text-center bg-yellow-400 text-gray-900 font-black py-4 px-6 rounded-full text-lg hover:bg-yellow-300 transition-all duration-300 transform hover:scale-105 shadow-lg" data-item="Professional Mascot Entertainment">
-                        <i class="fas fa-star mr-2"></i>Book Standard Package
-                    </a>
-                    <a href="#" class="book-btn block text-center bg-pink-500 text-white font-black py-4 px-6 rounded-full text-lg hover:bg-pink-400 transition-all duration-300 transform hover:scale-105 shadow-lg" data-item="Surprise Birthday Package">
-                        <i class="fas fa-birthday-cake mr-2"></i>Book Birthday Surprise
-                    </a>
-                </div>
-
-                <div class="text-center mt-6">
-                    <p class="text-blue-100 font-semibold">📞 Call now for instant booking!</p>
-                </div>
-            </div>
-        </div>
 
         <!-- Gallery Grid -->
         <div id="gallery-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 reveal">
